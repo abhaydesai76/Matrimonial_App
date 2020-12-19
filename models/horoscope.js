@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const citySchema = new mongoose.Schema({
+const horoscopeSchema = new mongoose.Schema({
     value: {
         type: String,       
     },
@@ -9,10 +9,10 @@ const citySchema = new mongoose.Schema({
     },
 },
 {
-    collection: 'cities'
+    collection: 'horoscope'
 })
 
-citySchema.set('toJSON', {
+horoscopeSchema.set('toJSON', {
     transform: (document, returnedObject) => {
       returnedObject.id = returnedObject._id.toString()
       delete returnedObject._id
@@ -20,4 +20,4 @@ citySchema.set('toJSON', {
     }
   })
 
-module.exports = mongoose.model('City', citySchema)
+module.exports = mongoose.model('Horoscope', horoscopeSchema)
